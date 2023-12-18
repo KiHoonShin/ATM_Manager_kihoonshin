@@ -50,10 +50,10 @@ public class BankController {
 				return;
 			} else if(sel == 1) {
 				System.out.println("[회원목록]");
-				//cDAO.showAllClient();
+				cDAO.showAllClient();
 			} else if(sel == 2) {
 				System.out.println("[회원정보 수정]");
-				//cDAO.modifyClient();
+				cDAO.modifyClient();
 			} else if(sel == 3) {
 				System.out.println("[회원정보 삭제]");
 				//cDAO.deleteClient(aDAO);
@@ -85,9 +85,11 @@ public class BankController {
 				//cDAO.joinClient();
 			} else if(sel == 2) {
 				System.out.println("[로그인]");
-//				if(cDAO.loginClient()) {
-//					loginUserMenu();
-//				}
+				if(!cDAO.loginClient()) {
+					System.out.println("[로그인 실패]");
+					return;
+				}
+				loginUserMenu();
 			}
 		} //while
 	}

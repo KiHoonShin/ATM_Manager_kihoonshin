@@ -48,7 +48,7 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return clientNo +"  " + id + "  " + pw + "  " + name +"  ";
+		return clientNo +"\t" + id + "\t" + pw + "\t" + name;
 	}
 	
 	
