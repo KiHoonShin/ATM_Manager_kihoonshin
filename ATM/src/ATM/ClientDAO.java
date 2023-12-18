@@ -103,6 +103,31 @@ public class ClientDAO {
 			System.err.println("존재하지 않는 아이디");
 			return;
 		}
+		int delIdx = findIdx(idCheck);
+		for(int i = 0; i < cList.size(); i++) {
+			if(delIdx == i) {
+				cList.remove(delIdx);
+			}
+		}
+		cnt -= 1;
+		aDAO.delAccount(id);
+		System.out.println(idCheck);
+		System.out.println(" [회원 삭제 완료]");
+		
 	}
+	
+	// id로 인덱스 찾기
+	private int findIdx(Client idCheck) {
+		if(cnt == 0) return -1;
+		int idx = 0;
+		for(Client c : cList) {
+			if(idCheck == c) {
+				return idx;
+			}
+			idx +=1;
+		}
+		return -1;
+	}
+	
 	
 }

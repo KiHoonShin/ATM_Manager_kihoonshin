@@ -56,7 +56,7 @@ public class BankController {
 				cDAO.modifyClient();
 			} else if(sel == 3) {
 				System.out.println("[회원정보 삭제]");
-				//cDAO.deleteClient(aDAO);
+				cDAO.deleteClient(aDAO);
 			} else if(sel == 4) {
 				System.out.println("[은행 데이터 저장]");
 				//util.saveToFile(cDAO, aDAO);

@@ -12,7 +12,7 @@ public class AccountDAO {
 		aList = new ArrayList<Account>(); 
 		roadToAccountData();
 	}
-	
+	// 데이터 불러오기
 	public void roadToAccountData() {
 		String data = util.roadAccountFile();
 		if(data == null) return;
@@ -22,6 +22,16 @@ public class AccountDAO {
 			aList.add(new Account(info[0],info[1],Integer.parseInt(info[2])));
 		}
 		cnt = aList.size();
+	}
+	
+	// 회원삭제할때 account도 삭제
+	public void delAccount(String id) {
+		for(int i = 0; i < aList.size(); i++) {
+			if(aList.get(i).getClientId().equals(id)) {
+				aList.remove(i);
+				cnt -= 1;
+			}
+		}
 	}
 	
 }
